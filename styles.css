@@ -1,0 +1,318 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+@font-face {
+  font-family: "De Fonte Plus";
+  src: url("./Creepster-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  will-change: transform;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 5rem;
+  font-family: "De Fonte Plus";
+  letter-spacing: -0.1rem;
+  line-height: 0.85;
+}
+
+p,
+a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 550;
+  line-height: 1;
+  display: inline-block;
+}
+
+nav,
+footer {
+  position: fixed;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  z-index: 2;
+}
+
+nav .logo {
+  width: 2rem;
+}
+
+nav .nav-links {
+  display: flex;
+  gap: 0.75rem;
+}
+
+footer {
+  bottom: 0;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.carousel-images,
+.carousel-images .img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-images .img {
+  will-change: clip-path;
+}
+
+.carousel-images {
+  opacity: 0.85;
+}
+
+.slide-title-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.slide-title-container .title {
+  position: relative;
+  text-align: center;
+  filter: url(#blur-matrix) blur(0.25px);
+  -webkit-filter: url(#blur-matrix) blur(0.25px);
+  z-index: 2;
+}
+
+.slide-title-container .title .word {
+  filter: blur(75px);
+  -webkit-filter: blur(75px);
+  will-change: filter, opacity;
+  opacity: 0;
+}
+
+.slider-controls {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+.control-btn {
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 0.075rem dashed rgba(255, 255, 255, 0.75);
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+.control-btn:hover {
+  background-color: #fff;
+}
+
+.control-btn svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  stroke: #000;
+  transition: fill 200ms ease-in-out;
+}
+
+.control-btn:hover svg {
+  fill: #000;
+}
+
+/* --- 新增表单区域样式 --- */
+.registration-form-section {
+    position: relative;
+    width: 100%;
+    height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #111; /* 稍暗的背景 */
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 600px;
+    padding: 3rem;
+    background-color: #222;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.form-container > p {
+    text-align: center;
+    margin-bottom: 2rem;
+    text-transform: none; /* 表单描述文字不用大写 */
+    font-size: 1rem;
+}
+
+fieldset {
+    border: 1px dashed rgba(255, 255, 255, 0.5);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+}
+
+legend {
+    color: #fff;
+    padding: 0 1rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: normal;
+    text-transform: none;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="number"],
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #333;
+    border: 1px solid #555;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 1rem;
+}
+
+/* Radio Group 样式 */
+.radio-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.radio-group span {
+    font-size: 0.9rem;
+    font-weight: normal;
+    text-transform: none;
+}
+.radio-group input[type="radio"] {
+    display: none;
+}
+.radio-group label {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 1px solid #777;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-transform: none;
+    font-size: 0.8rem;
+}
+.radio-group input[type="radio"]:checked + label {
+    background-color: #fff;
+    color: #000;
+    border-color: #fff;
+}
+
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* 隐藏非当前语言的按钮，增强用户体验 */
+.lang-switch-btn[data-target-lang="en"][data-lang="en"],
+.lang-switch-btn[data-target-lang="zh"][data-lang="zh"] {
+    display: none;
+}
+[data-lang="zh"] [data-en],
+[data-lang="en"] [data-zh] {
+    display: none;
+}
+
+@media (max-width: 900px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  .slide-title-container {
+    width: 100%;
+    padding: 0 2rem;
+  }
+
+  .slider-controls {
+    top: 65%;
+    width: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .control-btn {
+    padding: 1rem;
+  }
+
+  .control-btn svg {
+    width: 1rem;
+    height: 1rem;
+  }
+}
